@@ -1,6 +1,39 @@
-# AngularBoardIssues
+# Angular Board Issues
+
+## Technologies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+
+It use [Angular Material](https://material.angular.io/) and [Firebase](https://firebase.google.com/).
+
+This application is build and tested with [GitHub Actions](https://github.com/features/actions) and pushed to [DockerHub](https://hub.docker.com/).
+
+## Requirements
+
+- [Docker]()
+- [NPM]()
+
+## Usage
+
+You will need to register a new applicati to your Firestore console before using this application.
+
+- First create a new project, for that login to your console at <https://console.firebase.google.com/>
+
+![firebase-console](.readme/firebase-console.png)
+
+![firebase-create-project](.readme/firebase-create-project.png)
+
+![firebase-project-created](.readme/firebase-project-created.png)
+
+![firebase-project-created](.readme/firebase-add-app.png)
+
+![firebase-project-created](.readme/firebase-create-app.png)
+
+![firebase-project-created](.readme/firebase-register-app.png)
+
+```shell
+
+```
 
 ## Development server
 
@@ -22,6 +55,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## References
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- <https://material.angular.io/>
