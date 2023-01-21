@@ -7,36 +7,42 @@ const BOARDS: Board[] = [
     name: 'Nidus',
     description: 'Home Automation and Monitoring',
     issues: 20,
+    columns: [],
   },
   {
     id: '2',
     name: 'Hortus',
     description: 'Gardenning planner',
     issues: 15,
+    columns: [],
   },
   {
     id: '3',
     name: 'FSWD',
     description: 'Full Stack Web Development Sharing Resources',
     issues: 12,
+    columns: [],
   },
   {
     id: '4',
     name: 'FSWD',
     description: 'Full Stack Web Development Sharing Resources',
     issues: 12,
+    columns: [],
   },
   {
     id: '5',
     name: 'FSWD',
     description: 'Full Stack Web Development Sharing Resources',
     issues: 12,
+    columns: [],
   },
   {
     id: '6',
     name: 'FSWD',
     description: 'Full Stack Web Development Sharing Resources',
     issues: 12,
+    columns: [],
   },
 ];
 

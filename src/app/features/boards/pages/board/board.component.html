@@ -1,2 +1,4 @@
 <p>{{ board?.name }}</p>
-<app-board-column></app-board-column>
+<div>
+  <app-board-column *ngFor="let colum of board?.columns"></app-board-column>
+</div>

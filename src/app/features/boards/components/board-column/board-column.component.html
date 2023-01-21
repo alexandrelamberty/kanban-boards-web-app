@@ -1,9 +1,9 @@
 <div>
   <h2>{{ columnName }}</h2>
   <ul>
-    <app-issue-item
+    <app-board-card
       *ngFor="let issue of issues"
       [text]="issue.text"
-    ></app-issue-item>
+    ></app-board-card>
   </ul>
 </div>

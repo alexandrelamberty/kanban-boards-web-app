@@ -1,23 +1,17 @@
-# Angular Board Issues
+# Kaban Board
 
-Minimalistic issues tracker.
+Minimalistic Kaban board.
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FStxq8Mwo3vQn3pOG09MSZ8%2FKaban-Board%3Fnode-id%3D0%253A1%26t%3DlBm5dv7LG469OUzt-1" allowfullscreen></iframe>
 
 ## Technologies
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
-It use [Angular Material](https://material.angular.io/) and [Firebase](https://firebase.google.com/).
-
-This application is build and tested with [GitHub Actions](https://github.com/features/actions) and pushed to [DockerHub](https://hub.docker.com/).
-
 ## Requirements
 
 - [Docker]()
 - [NPM]()
-
-```shell
-
-```
 
 ## Development server
 
