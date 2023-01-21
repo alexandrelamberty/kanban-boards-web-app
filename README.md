@@ -15,40 +15,6 @@ This application is build and tested with [GitHub Actions](https://github.com/fe
 - [Docker]()
 - [NPM]()
 
-## Usage
-
-You will need to create a new project and or add a new application to your Firestore console before anything else.
-
-- First create a new project, for that, login to your console at <https://console.firebase.google.com/>
-
-![firebase-console](.readme/01-firebase-console.png)
-
-- Choose a name to your project
-
-![firebase-create-project](.readme/02-firebase-create-project.png)
-
-![firebase-project-created](.readme/03-firebase-project-created.png)
-
-- First add Firebase to the created application, choose the web version.
-
-![firebase-project-created](.readme/04-firebase-add-app.png)
-
-![firebase-project-created](.readme/05-firebase-create-app.png)
-
-![firebase-project-created](.readme/06-firebase-register-app.png)
-
-![firebase-project-created](.readme/07-firebase-choose-product.png)
-
-![firebase-project-created](.readme/08-firebase-product-firestore.png)
-
-![firebase-project-created](.readme/09-A-firebase-firestore-create-database.png)
-
-![firebase-project-created](.readme/09-B-firebase-firestore-create-database-test.png)
-
-![firebase-project-created](.readme/10-firebase-firestore-create-database-location.png)
-
-![firebase-project-created](.readme/11-firebase-firestore-create-database-done.png)
-
 ```shell
 
 ```
@@ -76,3 +42,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## References
 
 - <https://material.angular.io/>
+- <https://firebase.google.com/docs/firestore/use-rest-api>
+- <https://www.jeansnyman.com/posts/google-firestore-rest-api-examples/>

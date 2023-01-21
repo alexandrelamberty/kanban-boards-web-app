@@ -1,19 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { BoardsModule } from './features/boards/boards.module';
 
 @NgModule({
-  declarations: [AppComponent],
   imports: [
     BrowserModule,
+    RouterModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule,
+    NgbModule,
+    CoreModule,
+    SharedModule,
+    BoardsModule,
   ],
   providers: [],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
