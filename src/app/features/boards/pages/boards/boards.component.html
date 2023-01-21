@@ -1,1 +1,8 @@
-<p>boards works!</p>
+<div class="row row-cols-3 row-cols-md-4 g-5">
+  <div class="col" *ngFor="let project of projects">
+    <app-board-card
+      [board]="project"
+      (onBoardSelect)="onBoardSelected(project)"
+    ></app-board-card>
+  </div>
+</div>
