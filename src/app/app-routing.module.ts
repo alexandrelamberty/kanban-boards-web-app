@@ -5,7 +5,8 @@ import { BoardsComponent } from './features/boards/pages/boards/boards.component
 const routes: Routes = [
   {
     path: '',
-    component: BoardsComponent,
+    redirectTo: 'boards',
+    pathMatch: 'full',
   },
 ];
 

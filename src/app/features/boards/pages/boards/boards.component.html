@@ -1,3 +1,12 @@
+<!-- Form -->
+<ng-template #content let-modal>
+  <app-board-form [modal]="modal"></app-board-form>
+</ng-template>
+<!-- -->
+<div class="board-actions text-end">
+  <button class="btn btn-success" (click)="open(content)">+ Board</button>
+</div>
+
 <div class="row row-cols-3 row-cols-md-4 g-5">
   <div class="col" *ngFor="let project of projects">
     <app-board-project

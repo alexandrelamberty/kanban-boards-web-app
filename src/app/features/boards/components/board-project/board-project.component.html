@@ -1,7 +1,8 @@
-<div class="card" style="width: 18rem; height: 10rem" (click)="selectBoard()">
+<div class="card" style="width: 18rem; height: 10rem">
   <div class="card-body">
-    <h5 class="card-title">{{ board?.name }}</h5>
+    <h5 class="card-title" (click)="selectBoard()">{{ board?.name }}</h5>
     <p class="card-text">{{ board?.description }}</p>
     <p>{{ board?.issues }}</p>
   </div>
+  <button class="btn btn-danger" (click)="deleteBoard()">-</button>
 </div>

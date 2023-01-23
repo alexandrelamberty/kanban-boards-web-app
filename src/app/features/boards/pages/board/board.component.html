@@ -1,4 +1,17 @@
-<p>{{ board?.name }}</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>{{ board?.name }}</p>
+      <p>{{ board?.description }}</p>
+    </div>
+    <div class="col text-end">
+      <button class="btn btn-success">+ Column</button>
+    </div>
+  </div>
+</div>
 <div>
-  <app-board-column *ngFor="let colum of board?.columns"></app-board-column>
+  <app-board-column
+    *ngFor="let column of columns"
+    [column]="column"
+  ></app-board-column>
 </div>

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-board-issues';
+
+  onHandleAlert() {
+    // clear the reference the alert uses
+  }
 }

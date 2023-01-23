@@ -6,15 +6,22 @@ import { BoardColumnComponent } from './components/board-column/board-column.com
 import { BoardProjectComponent } from './components/board-project/board-project.component';
 import { BoardComponent } from './pages/board/board.component';
 import { BoardsComponent } from './pages/boards/boards.component';
+import { BoardFormComponent } from './components/board-form/board-form.component';
+import { ColumnFormComponent } from './components/column-form/column-form.component';
+import { IssueFormComponent } from './components/issue-form/issue-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  imports: [CommonModule, BoardsRoutingModule],
+  imports: [CommonModule, ReactiveFormsModule, BoardsRoutingModule],
   declarations: [
     BoardsComponent,
     BoardComponent,
     BoardProjectComponent,
     BoardColumnComponent,
     BoardCardComponent,
+    BoardFormComponent,
+    ColumnFormComponent,
+    IssueFormComponent,
   ],
   exports: [BoardsComponent, BoardComponent],
 })
