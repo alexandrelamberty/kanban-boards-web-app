@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-board-issues": {
+    "kanban-boards": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-board-issues",
+            "outputPath": "dist/kanban-boards",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-board-issues:build:production"
+              "browserTarget": "kaban-boards:build:production"
             },
             "development": {
-              "browserTarget": "angular-board-issues:build:development"
+              "browserTarget": "kaban-boards:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-board-issues:build"
+            "browserTarget": "kaban-boards:build"
           }
         },
         "test": {
@@ -99,9 +99,9 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "angular-board-issues:build:production",
-            "firebaseProject": "angular-board-issues-53ae5",
-            "firebaseHostingSite": "angular-board-issues-53ae5"
+            "browserTarget": "kaban-boards:build:probanduction",
+            "firebaseProject": "kaban-boards-53ae5",
+            "firebaseHostingSite": "kaban-boards-53ae5"
           }
         }
       }
