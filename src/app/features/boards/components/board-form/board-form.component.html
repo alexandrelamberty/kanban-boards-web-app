@@ -1,14 +1,14 @@
-<div class="modal-header">
-  <h4 class="modal-title" id="modal-basic-title">New Board</h4>
-  <button
-    type="button"
-    class="btn-close"
-    aria-label="Close"
-    (click)="close()"
-  ></button>
-</div>
-<div class="modal-body">
-  <form [formGroup]="boardForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="boardForm" (ngSubmit)="onSubmit()">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Board</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="close()"
+    ></button>
+  </div>
+  <div class="modal-body">
     <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control" formControlName="name" />
@@ -21,32 +21,10 @@
         formControlName="description"
       ></textarea>
     </div>
+  </div>
+  <div class="modal-footer">
     <button type="submit" class="btn btn-primary" [disabled]="!boardForm.valid">
-      Submit
+      Save
     </button>
-  </form>
-</div>
-<div class="modal-footer">
-  <button type="submit" class="btn btn-primary" [disabled]="!boardForm.valid">
-    Submit
-  </button>
-</div>
-<!--
-<form [formGroup]="boardForm" (ngSubmit)="onSubmit()">
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" formControlName="name" />
   </div>
-  <div class="mb-3">
-    <label for="description" class="form-label">Description</label>
-    <textarea
-      type="text"
-      class="form-control"
-      formControlName="description"
-    ></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="!boardForm.valid">
-    Submit
-  </button>
 </form>
--->

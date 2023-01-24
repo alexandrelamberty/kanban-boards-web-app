@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-board-issues-53ae5": {
+      "hosting": {
+        "angular-board-issues": [
+          "angular-board-issues-53ae5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-board-issues-53ae5"
+  }
+}
