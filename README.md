@@ -84,6 +84,16 @@ export const environment = {
 };
 ```
 
+```shell
+ng run kaban-boards:collect-vars
+```
+
+Build with your environment
+
+```shell
+ng build kaban-boards — configuration deployment
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
