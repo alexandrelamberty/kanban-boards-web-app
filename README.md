@@ -68,6 +68,22 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![firebase-project-created](.readme/11-firebase-firestore-create-database-done.png)
 
+### Project environment variables
+
+```js
+export const environment = {
+  production: true,
+  firebase: {
+    projectId: '',
+    appId: '',
+    storageBucket: '',
+    apiKey: '',
+    authDomain: '',
+    messagingSenderId: '',
+  },
+};
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.

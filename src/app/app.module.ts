@@ -39,7 +39,7 @@ import { HomeComponent } from './core/components/home/home.component';
     //AngularFireStorageModule,
   ],
   providers: [AuthService],
-  declarations: [AppComponent, ProfileComponent, HomeComponent],
+  declarations: [AppComponent, ProfileComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
