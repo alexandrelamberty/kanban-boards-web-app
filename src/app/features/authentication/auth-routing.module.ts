@@ -6,10 +6,15 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
 import { AuthGuard } from './guards/auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SignedInGuard } from './guards/signed-in.guard';
 
 const routes: Routes = [
-  // { path: 'dashboard', component: DashboardComponent },
-  { path: 'sign-in', component: SignInComponent },
+  // { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  {
+    path: 'sign-in',
+    component: SignInComponent,
+    // canActivate: [SignedInGuard],
+  },
   { path: 'register-user', component: SignUpComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
@@ -21,7 +26,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class AuthRoutingModule {}

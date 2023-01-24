@@ -11,9 +11,9 @@ import { AuthService } from './services/auth.service';
 @NgModule({
   imports: [CommonModule, RouterModule, AuthRoutingModule],
   declarations: [
-    ForgotPasswordComponent,
     SignInComponent,
     SignUpComponent,
+    ForgotPasswordComponent,
     VerifyEmailComponent,
   ],
   providers: [AuthService],
