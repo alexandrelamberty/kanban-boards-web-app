@@ -10,9 +10,14 @@ import { ColumnFormComponent } from './components/column-form/column-form.compon
 import { IssueFormComponent } from './components/issue-form/issue-form.component';
 import { BoardComponent } from './pages/board/board.component';
 import { BoardsComponent } from './pages/boards/boards.component';
-
+import { DragDropModule } from '@angular/cdk/drag-drop';
 @NgModule({
-  imports: [CommonModule, ReactiveFormsModule, BoardsRoutingModule],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    BoardsRoutingModule,
+    DragDropModule,
+  ],
   declarations: [
     BoardsComponent,
     BoardComponent,

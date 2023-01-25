@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <p>{{ board?.name }}</p>
+      <h3>{{ board?.name }}</h3>
       <p>{{ board?.description }}</p>
     </div>
     <div class="col text-end">
@@ -15,7 +15,8 @@
     </div>
   </div>
 </div>
-<div>
+<!-- FIXME: nice columns scrolling and responsive view -->
+<div class="row row-cols-3 row-cols-md-4 g-5" cdkDropListGroup>
   <app-board-column
     *ngFor="let column of columns"
     [column]="column"
