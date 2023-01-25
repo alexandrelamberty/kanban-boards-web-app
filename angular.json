@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "kaban-boards:build:production"
+              "browserTarget": "kanban-boards:build:production"
             },
             "development": {
-              "browserTarget": "kaban-boards:build:development"
+              "browserTarget": "kanban-boards:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +80,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kaban-boards:build"
+            "browserTarget": "kanban-boards:build"
           }
         },
         "test": {
@@ -99,9 +99,9 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "kaban-boards:build:probanduction",
-            "firebaseProject": "kaban-boards-53ae5",
-            "firebaseHostingSite": "kaban-boards-53ae5"
+            "browserTarget": "kanban-boards:build:production",
+            "firebaseProject": "angular-kanban-boards",
+            "firebaseHostingSite": "kboards"
           }
         }
       }
