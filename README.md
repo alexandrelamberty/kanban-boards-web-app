@@ -1,16 +1,16 @@
-# Kaban Board
+# Kanban Board
 
-Minimalistic Kaban board.
+Minimalistic Kanban board.
 
 ## Design
 
-This project is in an early stage and I haven't yet designed or thinked about the whole application. Here is the first draft.
+This project is in an early stage and I haven't yet designed or thought about the whole application. Here is the first draft.
 
-![Kaban boards](.readme/Board-view-Kaban-Boards.png)
+![Kanban boards](.readme/Board-view-Kanban-Boards.png)
 
-![Kaban boards](.readme/Board-view-Kaban-Board.png)
+![Kanban boards](.readme/Board-view-Kanban-Board.png)
 
-See the Figma viewer : [Kaban Board Design](https://www.figma.com/file/Stxq8Mwo3vQn3pOG09MSZ8?embed_host=share&kind=&node-id=0%3A1&t=lBm5dv7LG469OUzt-1&viewer=1)
+See the Figma viewer : [Kanban Board Design](https://www.figma.com/file/Stxq8Mwo3vQn3pOG09MSZ8?embed_host=share&kind=&node-id=0%3A1&t=lBm5dv7LG469OUzt-1&viewer=1)
 
 ## Technologies
 
@@ -18,12 +18,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Requirements
 
-- [Docker]()
-- [NPM]()
+- [NPM](https://www.npmjs.com/)
 
 ## Configuration
 
-### Crceate a new project
+### Create a new project
 
 - First create a new project, for that, login to your console at
 <https://console.firebase.google.com/>
@@ -51,17 +50,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - First add Firebase to the created application, choose the web version.
 
 ![firebase-project-created](.readme/04-firebase-add-app.png)
-
 ![firebase-project-created](.readme/05-firebase-create-app.png)
-
 ![firebase-project-created](.readme/06-firebase-register-app.png)
-
 ![firebase-project-created](.readme/07-firebase-choose-product.png)
-
 ![firebase-project-created](.readme/08-firebase-product-firestore.png)
-
 ![firebase-project-created](.readme/09-A-firebase-firestore-create-database.png)
-
 ![firebase-project-created](.readme/09-B-firebase-firestore-create-database-test.png)
 
 ![firebase-project-created](.readme/10-firebase-firestore-create-database-location.png)
@@ -110,7 +103,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To
 use this command, you need to first add a package that implements end-to-end
 testing capabilities.
 
-## Deployement
+## Deployment
 
 Run `firebase deploy`to deploy the site to the appropriate project.
 
