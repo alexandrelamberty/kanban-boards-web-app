@@ -130,6 +130,10 @@ export class BoardFirestoreService {
       .update(issue);
   }
 
+  moveIssue() {
+    // to be implemented
+  }
+
   deleteIssue(
     boardId: string,
     columnId: string,
