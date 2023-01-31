@@ -11,13 +11,15 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./board.component.scss'],
 })
 export class BoardComponent {
+  closeResult = '';
   @Output() board: Board | undefined;
   @Output() columns: Column[] | undefined;
-  private id: string | null = null;
+  id: string | null = null;
 
   constructor(
     private firestoreService: BoardFirestoreService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private modalService: NgbModal
   ) {
     console.log('BoardComponent');
   }
@@ -37,33 +39,29 @@ export class BoardComponent {
         this.columns = data as Column[];
         console.log(this.columns);
       });
-
-      // TESTS ------
-      /*
-      let boardDto: Board = {
-        name: 'Test',
-        description: 'Description',
-      };
-      this.firestoreService.createBoard(boardDto);
-      */
-
-      // Update board
-
-      // Delete a board
-      //this.firestoreService.deleteBoard('n35HCMqxepscibk7r9Cp');
-
-      // Creata a board column
-      let columnDto: Column = {
-        name: 'Testsss',
-      };
-
-      if (this.id) {
-        console.log('-------------- addd -------------------');
-        //this.firestoreService.createColumn(this.column?.id, columnDto);
-      }
     }
+  }
 
-    console.log('Board after: ', this.board);
-    console.log('Columns after: ', this.columns);
+  open(content: any) {
+    this.modalService
+      .open(content, { ariaLabelledBy: 'modal-basic-title' })
+      .result.then(
+        (result: any) => {
+          this.closeResult = `Closed with: ${result}`;
+        },
+        (reason: any) => {
+          this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+        }
+      );
+  }
+
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return `with: ${reason}`;
+    }
   }
 }

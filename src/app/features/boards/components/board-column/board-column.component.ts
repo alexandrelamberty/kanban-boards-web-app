@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Issue } from '../../models/issue.model';
-import { Column } from '../../models/column.model';
-import { __importDefault } from 'tslib';
-import { BoardFirestoreService } from '../../services/board-firestore.service';
-import { Observable } from 'rxjs';
-import { Board } from '../../models/board.model';
 import { ActivatedRoute } from '@angular/router';
-
+import { Board } from '../../models/board.model';
+import { Column } from '../../models/column.model';
+import { Issue } from '../../models/issue.model';
+import { BoardFirestoreService } from '../../services/board-firestore.service';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-board-column',
   templateUrl: './board-column.component.html',
@@ -24,29 +26,55 @@ export class BoardColumnComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log('test');
     this.id = this.route.snapshot.paramMap.get('id');
-    console.log('ID: ', this.id);
-    console.log('BoardColumnComponentInit', this.board);
     if (this.id && this.column && this.column.id) {
       this.firestoreService
         .getIssues(this.id, this.column.id)
         .subscribe((data: any) => {
-          console.log(data);
           this.issues = data;
         });
     }
+  }
 
-    // --- Columns ---
+  deleteColumn() {
+    if (this.id && this.column?.id)
+      this.firestoreService.deleteColumn(this.id, this.column?.id);
+  }
 
-    // Creata a board column
-    let columnDto: Column = {
-      name: 'Testsss',
+  addTask() {
+    console.log('ADD TASK');
+    const issue: Issue = {
+      text: 'Hello',
     };
+    if (this.id && this.column?.id)
+      this.firestoreService.createIssue(this.id, this.column?.id, issue);
+  }
 
-    if (this.id) {
-      console.log('-------------- addd -------------------');
-      //this.firestoreService.createColumn(this.id, columnDto);
+  drop(event: CdkDragDrop<Issue[] | undefined>) {
+    console.log('------- DROP ISSUE -----');
+    console.log('EVENT: ', event);
+    console.log(event.item.data);
+
+    if (event.previousContainer === event.container) {
+      console.log('SAME CONTAINER');
+      if (event.container.data)
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
+    } else {
+      console.log('DIFFERENT CONTAINER');
+      console.log('PREV CONT DATA: ', event.previousContainer.data);
+      console.log('CONT DATA: ', event.container.data);
+      console.log('PREV INDEX: ', event.previousIndex);
+      if (event.container.data && event.previousContainer.data)
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        );
     }
   }
 }

@@ -1,9 +1,39 @@
-<div>
-  <h2>{{ column?.name }}</h2>
-  <ul>
+<div class="rounded bg-secondary p-2 h-100">
+  <div class="clearfix">
+    <h5 class="float-start py-2 px-2">{{ column?.name }}</h5>
+    <div class="dropdown float-end">
+      <button
+        class="btn btn-sm btn-primary d-block float-end"
+        (click)="addTask()"
+      >
+        +
+      </button>
+      <button
+        class="btn btn-sm btn-secondary dropdown-toggle float-end"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      ></button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="deleteColumn()">Delete</a></li>
+        <li><a class="dropdown-item" href="#">Set column limit</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <ul
+    class="list-group"
+    cdkDropList
+    [cdkDropListData]="issues"
+    (cdkDropListDropped)="drop($event)"
+  >
     <app-board-card
+      class="py-1"
       *ngFor="let issue of issues"
-      [text]="issue.text"
+      [issue]="issue"
+      [columnId]="column?.id"
+      cdkDrag
+      [cdkDragData]="issue"
     ></app-board-card>
   </ul>
 </div>

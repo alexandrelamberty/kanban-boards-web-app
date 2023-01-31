@@ -1,3 +1,4 @@
-<li>
-  <p>{{ text }}</p>
+<li class="list-group-item rounded board-card">
+  <p>{{ issue?.text }}</p>
+  <a class="btn btn-sm btn-primary" (click)="taskDone()">DONE</a>
 </li>

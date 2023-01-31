@@ -13,6 +13,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class BoardsComponent implements OnInit {
   projects: Board[];
   closeResult = '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -23,15 +24,11 @@ export class BoardsComponent implements OnInit {
     //this.projects = this.boardService.getAllBoards();
   }
   ngOnInit(): void {
-    console.log('--- BOARD ---');
-    console.log('getAllBoards()');
     this.firestoreService.getBoards().subscribe((data) => {
       console.log(data);
       this.projects = data as Board[];
     });
-    console.log(this.projects);
 
-    console.log('getAllColumns("0hmGWduZElEucLjSuBtv")');
     this.firestoreService.getColumns('0hmGWduZElEucLjSuBtv');
 
     this.firestoreService.getIssues(

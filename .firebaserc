@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "angular-kanban-boards"
+  },
+  "targets": {
+    "angular-kanban-boards": {
+      "hosting": {
+        "app": [
+          "kboards"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

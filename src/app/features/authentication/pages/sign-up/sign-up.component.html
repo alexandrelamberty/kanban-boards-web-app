@@ -1,0 +1,61 @@
+<div class="sign-up">
+  <div class="authBlock">
+    <h3>Sign Up</h3>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        aria-describedby="emailHelp"
+        palceholder="Username"
+        #userEmail
+        required
+      />
+      <div id="emailHelp" class="form-text">
+        We'll never share your email with anyone else.
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          #userPassword
+          required
+        />
+      </div>
+    </div>
+    <div class="formGroup">
+      <input
+        type="button"
+        class="btn btn-primary"
+        value="Sign Up"
+        (click)="authService.signUp(userEmail.value, userPassword.value)"
+      />
+    </div>
+
+    <hr class="my-4" />
+
+    <!-- Continue with Google -->
+    <button
+      class="w-100 py-2 mb-2 btn btn-outline-danger rounded-3"
+      type="submit"
+      (click)="authService.signInGoogle()"
+    >
+      <svg class="bi me-1" width="16" height="16">
+        <use xlink:href="#google"></use>
+      </svg>
+      Sign up with Google
+    </button>
+  </div>
+
+  <div class="redirectToLogin">
+    <a
+      >Already have an account?
+      <a class="redirect" routerLink="/sign-in">Log In</a></a
+    >
+  </div>
+</div>
