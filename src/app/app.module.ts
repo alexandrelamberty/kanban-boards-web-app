@@ -1,10 +1,5 @@
 import { NgModule } from '@angular/core';
-import {
-  AuthErrorCodes,
-  AuthModule,
-  getAuth,
-  provideAuth,
-} from '@angular/fire/auth';
+import { getAuth, provideAuth } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
@@ -16,11 +11,11 @@ import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { AuthenticationModule } from './features/authentication/auth.module';
+import { ProfileComponent } from './features/authentication/pages/profile/profile.component';
 import { AuthService } from './features/authentication/services/auth.service';
 import { BoardsModule } from './features/boards/boards.module';
 import { SharedModule } from './shared/shared.module';
-import { AuthenticationModule } from './features/authentication/auth.module';
-import { ProfileComponent } from './features/authentication/pages/profile/profile.component';
 
 @NgModule({
   imports: [

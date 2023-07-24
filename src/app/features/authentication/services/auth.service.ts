@@ -22,6 +22,7 @@ export class AuthService {
   ) {
     // Subscribe to the auth state to reflect the user status in the local storage
     this.afAuth.authState.subscribe((user) => {
+      console.log('--- ON AUTH STATE ---', user);
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
@@ -55,7 +56,8 @@ export class AuthService {
         this.afAuth.authState.subscribe((user) => {
           if (user) {
             console.log(user);
-            this.router.navigate(['boards']);
+            //this.router.navigate(['../boards']);
+            this.ngZone.run(() => this.router.navigate(['boards']));
           }
         });
       })
@@ -69,11 +71,18 @@ export class AuthService {
    * @returns
    */
   signInGoogle() {
-    return this.authLogin(new auth.GoogleAuthProvider()).then((res: any) => {
-      console.log('--------------- must go to board ---------');
-      if (res) console.log(res);
-      this.router.navigate(['boards', {}]);
-    });
+    return this.authLogin(new auth.GoogleAuthProvider())
+      .then((result) => {
+        this.afAuth.authState.subscribe((user) => {
+          if (user) {
+            console.log(user);
+            this.ngZone.run(() => this.router.navigate(['boards']));
+          }
+        });
+      })
+      .catch((error) => {
+        window.alert(error.message);
+      });
   }
 
   /**
@@ -86,10 +95,8 @@ export class AuthService {
     return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        this.sendVerificationMail();
         this.setUserData(result.user);
+        this.sendVerificationMail();
       })
       .catch((error) => {
         window.alert(error.message);
@@ -97,7 +104,8 @@ export class AuthService {
   }
 
   /**
-   * Send an email verfificaiton when new user sign up
+   * Send an email verfificaiton when new user sign up and redirect him to the
+   * verify-email-page.
    * @returns
    */
   sendVerificationMail() {
@@ -129,11 +137,13 @@ export class AuthService {
    * @returns
    */
   authLogin(provider: any) {
+    console.log('authLogin provider: ', provider);
     return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
+        console.log('authLogin result: ', result);
+        console.log('authLogin router: ', this.router);
         this.setUserData(result.user);
-        this.router.navigate(['boards']);
       })
       .catch((error) => {
         window.alert(error);

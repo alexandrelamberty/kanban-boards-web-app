@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { RouterModule } from '@angular/router';
 import { AuthRoutingModule } from './auth-routing.module';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { SignUpComponent } from './pages/sign-up/sign-up.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { VerifyEmailComponent } from './pages/verify-email/verify-email.component';
-import { RouterModule } from '@angular/router';
 import { AuthService } from './services/auth.service';
 
 @NgModule({
@@ -13,7 +12,6 @@ import { AuthService } from './services/auth.service';
   declarations: [
     ForgotPasswordComponent,
     SignInComponent,
-    SignUpComponent,
     VerifyEmailComponent,
   ],
   providers: [AuthService],

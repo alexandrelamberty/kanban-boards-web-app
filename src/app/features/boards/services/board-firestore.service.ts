@@ -93,17 +93,25 @@ export class BoardFirestoreService {
       .delete();
   }
 
+  // TODO: Query for issues not done and done
   getIssues(boardId: string, columnId: string): Observable<Issue[]> {
     return this.boardsCollection
       .doc(boardId)
       .collection('columns')
       .doc(columnId)
       .collection<Issue>('issues')
-      .valueChanges();
+      .snapshotChanges()
+      .pipe(
+        map((changes: any) =>
+          changes.map((c: any) => ({
+            id: c.payload.doc.id,
+            ...c.payload.doc.data(),
+          }))
+        )
+      );
   }
 
-  /*
-  createIssue(boardId: string, columnId: string, issue: Issue): Promise<void> {
+  createIssue(boardId: string, columnId: string, issue: Issue) {
     return this.boardsCollection
       .doc(boardId)
       .collection('columns')
@@ -111,7 +119,7 @@ export class BoardFirestoreService {
       .collection('issues')
       .add(issue);
   }
-  */
+
   updateIssue(boardId: string, columnId: string, issue: Issue): Promise<void> {
     return this.boardsCollection
       .doc(boardId)
@@ -120,6 +128,10 @@ export class BoardFirestoreService {
       .collection('issues')
       .doc(issue.text)
       .update(issue);
+  }
+
+  moveIssue() {
+    // to be implemented
   }
 
   deleteIssue(

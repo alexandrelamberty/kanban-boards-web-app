@@ -1,14 +1,15 @@
 {
+  "projects": {
+    "default": "angular-kanban-boards"
+  },
   "targets": {
-    "angular-board-issues-53ae5": {
+    "angular-kanban-boards": {
       "hosting": {
-        "angular-board-issues": [
-          "angular-board-issues-53ae5"
+        "app": [
+          "kboards"
         ]
       }
     }
   },
-  "projects": {
-    "default": "angular-board-issues-53ae5"
-  }
+  "etags": {}
 }

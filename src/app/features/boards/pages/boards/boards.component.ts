@@ -13,6 +13,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class BoardsComponent implements OnInit {
   projects: Board[];
   closeResult = '';
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

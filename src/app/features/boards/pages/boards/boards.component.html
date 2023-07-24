@@ -3,10 +3,17 @@
   <app-board-form [modal]="modal"></app-board-form>
 </ng-template>
 <!-- -->
-<div class="board-actions text-end">
-  <button class="btn btn-success" (click)="open(content)">+ Board</button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h3>My boards</h3>
+    </div>
+    <div class="col text-end">
+      <button class="btn btn-success" (click)="open(content)">+ Board</button>
+    </div>
+  </div>
 </div>
-
+<!-- FIXME: responsive view -->
 <div class="row row-cols-3 row-cols-md-4 g-5">
   <div class="col" *ngFor="let project of projects">
     <app-board-project

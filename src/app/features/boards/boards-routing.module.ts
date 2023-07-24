@@ -5,6 +5,7 @@ import { BoardComponent } from './pages/board/board.component';
 import { AuthGuard } from '../authentication/guards/auth.guard';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'boards', pathMatch: 'full' },
   {
     path: 'boards',
     component: BoardsComponent,
@@ -18,7 +19,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
 export class BoardsRoutingModule {}
