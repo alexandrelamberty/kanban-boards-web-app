@@ -18,6 +18,7 @@ import { BoardsModule } from './features/boards/boards.module';
 import { SharedModule } from './shared/shared.module';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HomeComponent } from './core/components/home/home.component';
+import { TestTestComponent } from './test-test/test-test.component';
 
 @NgModule({
   imports: [
@@ -39,7 +40,7 @@ import { HomeComponent } from './core/components/home/home.component';
     //AngularFireStorageModule,
   ],
   providers: [AuthService],
-  declarations: [AppComponent, ProfileComponent],
+  declarations: [AppComponent, ProfileComponent, TestTestComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
